@@ -4,6 +4,7 @@ public class Room {
     private int rate;
     private String occupantName;
 
+    //default constructor
     public Room(){
         roomNumber = 100;
         bedType = "Queen";
@@ -11,6 +12,7 @@ public class Room {
         occupantName = "";
     }
 
+    //parameterized constructor
     public Room(int roomNumber, String bedType, int rate, String occupantName){
         this.roomNumber = roomNumber;
         this.bedType = bedType;

@@ -5,6 +5,7 @@ public class Hotel {
     private int numberOfRooms;
     private static final int NOT_FOUND = -1;
 
+    //default constructor
     public Hotel(){
         this.rooms = new Room[10];
         this.name = "None";
@@ -12,6 +13,7 @@ public class Hotel {
         this.numberOfRooms = 100;
     }
 
+    //parameterized constructor
     public Hotel(String name, String location, int numberOfRooms, Room rooms[]){
         this.name = name;
         this.location = location;
@@ -19,16 +21,21 @@ public class Hotel {
         this.rooms = rooms;
     }
 
+    //setters for all variables
     public void setRooms(Room rooms[]){
         this.rooms = rooms;
     }
     public void setName(String name){
         this.name = name;
     }
+    public void setLocation(String location){
+        this.location = location;
+    }
     public void setNumberOfRooms(int numberOfRooms){
         this.numberOfRooms = numberOfRooms;
     }
 
+    //getters for all variables
     public Room[] getRooms(){
         return rooms;
     }
