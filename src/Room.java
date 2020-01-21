@@ -19,4 +19,20 @@ public class Room {
         this.rate = rate;
         this.occupantName = occupantName;
     }
+    private boolean isOccupied(){
+        if(occupantName != ""){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return
+                "\nRoom Number: " + roomNumber +
+                "\nBed Type: " + bedType +
+                "\nRate: " + rate +
+                "\nOccupant Name: " + occupantName;
+    }
 }
