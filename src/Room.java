@@ -1,4 +1,4 @@
-public class Room {
+public class Room extends Hotel{
     private int roomNumber;
     private String bedType;
     private int rate;
@@ -19,12 +19,44 @@ public class Room {
         this.rate = rate;
         this.occupantName = occupantName;
     }
-    private boolean isOccupied(){
+    public boolean isOccupied(){
         if(occupantName != ""){
             return true;
         }else{
             return false;
         }
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public String getBedType() {
+        return bedType;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public String getOccupantName() {
+        return occupantName;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public void setBedType(String bedType) {
+        this.bedType = bedType;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
+    public void setOccupantName(String occupantName) {
+        this.occupantName = occupantName;
     }
 
     @Override

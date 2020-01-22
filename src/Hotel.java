@@ -10,7 +10,7 @@ public class Hotel {
         this.rooms = new Room[100];
         this.name = "None";
         this.location = "Earth";
-        this.numberOfRooms = 100;
+        this.numberOfRooms = 99;
     }
 
     //parameterized constructor
@@ -39,6 +39,8 @@ public class Hotel {
     }
 
     //getters for all variables
+
+
     public Room[] getRooms() {
         return rooms;
     }
@@ -64,18 +66,28 @@ public class Hotel {
         }
     }
 
-    private boolean addRoom(int roomNumber, String bedType, int roomRate){
-        int roomCapacity = 0;
-      if(numberOfRooms < rooms.length){
-           Room newRoom = new Room(roomNumber,bedType,roomRate,"");
-           //not sure how to add room to the array , i'm not sure how to add it to the array
-           numberOfRooms++;
+    public boolean addRoom(int roomNumber, String bedType, int roomRate){
+      if(this.numberOfRooms <= this.rooms.length){
+           this.rooms[numberOfRooms++] = new Room(roomNumber,bedType,roomRate,"");
            return true;
 
         }else {
           return false;
       }
     }
+
+    public void addReservation(String occupantsName, String bedType) {
+        int numRooms = this.rooms.length;
+
+        for (int i = numRooms-1; i >= 0 - 1; i--) {
+            if (rooms[i].getBedType() == bedType) {
+                rooms[i].setOccupantName(occupantsName);
+                System.out.println(rooms[i]);
+                break;
+            }
+        }
+    }
+
 
 
 }
