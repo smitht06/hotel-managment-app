@@ -7,14 +7,14 @@ public class Hotel {
 
     //default constructor
     public Hotel() {
-        this.rooms = new Room[100];
+        this.rooms = new Room[numberOfRooms];
         this.name = "None";
         this.location = "Earth";
         this.numberOfRooms = 99;
     }
 
     //parameterized constructor
-    public Hotel(String name, String location, int numberOfRooms, Room rooms[]) {
+    public Hotel(String name, String location, int numberOfRooms, Room[] rooms) {
         this.name = name;
         this.location = location;
         this.numberOfRooms = numberOfRooms;
@@ -79,8 +79,8 @@ public class Hotel {
     public void addReservation(String occupantsName, String bedType) {
         int numRooms = this.rooms.length;
 
-        for (int i = numRooms-1; i >= 0 - 1; i--) {
-            if (rooms[i].getBedType() == bedType) {
+        for (int i = numRooms-1; i >= -1; i--) {
+            if (rooms[i].getBedType().equals(bedType)) {
                 rooms[i].setOccupantName(occupantsName);
                 System.out.println(rooms[i]);
                 break;

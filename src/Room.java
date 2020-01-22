@@ -23,6 +23,7 @@ public class Room extends Hotel{
         if(occupantName != ""){
             return true;
         }else{
+            setOccupantName("Not Occupied");
             return false;
         }
     }
