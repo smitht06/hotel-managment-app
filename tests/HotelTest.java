@@ -4,43 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HotelTest {
 
-    @Test
-    void setRooms() {
-    }
-
-    @Test
-    void setName() {
-    }
-
-    @Test
-    void setLocation() {
-    }
-
-    @Test
-    void setNumberOfRooms() {
-    }
-
-    @Test
-    void getRooms() {
-    }
-
-    @Test
-    void getName() {
-    }
-
-    @Test
-    void getLocation() {
-    }
-
-    @Test
-    void getNumberOfRooms() {
-    }
-
-    @Test
-    void addRoom() {
-    }
-
-    @Test
-    void addReservation() {
+   @Test
+    void test(){
+       Hotel hotel1 = new Hotel();
+       hotel1.addRoom(100,"queen", 100);
+       assertEquals("queen", hotel1.getRooms()[9].getBedType());
+       assertEquals(10,hotel1.getNumberOfRooms());
     }
 }
