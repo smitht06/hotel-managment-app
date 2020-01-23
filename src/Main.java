@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String [] args){
         Hotel hotel1 = new Hotel();
-        hotel1.setNumberOfRooms(10);
+        hotel1.setNumberOfRooms(9);
 
         hotel1.addRoom(100,"queen", 100);
         System.out.println(hotel1.getNumberOfRooms());
