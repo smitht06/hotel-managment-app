@@ -66,9 +66,9 @@ public class Hotel {
         }
     }
 
-    public boolean addRoom(int roomNumber, String bedType, int roomRate){
+    public boolean addRoom(int roomNumber, String bedType, int roomRate,String occupantName){
       if(this.numberOfRooms <= this.rooms.length){
-           this.rooms[numberOfRooms++] = new Room(roomNumber,bedType,roomRate,"");
+           this.rooms[numberOfRooms++] = new Room(roomNumber,bedType,roomRate, occupantName);
            return true;
 
         }else {
@@ -86,7 +86,16 @@ public class Hotel {
             }
         }
     }
+    public void cancelReservation(String occupantName){
+        int numRooms = this.rooms.length;
+        for (int i = numRooms-1; i >= -1; i--) {
+            if (rooms[i].getOccupantName() == occupantName) {
+                rooms[i].setOccupantName("Not Occupied");
+                break;
+            }
+
+    }
 
 
 
-}
+}}

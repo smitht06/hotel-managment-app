@@ -20,7 +20,7 @@ public class Room extends Hotel{
         this.occupantName = occupantName;
     }
     public boolean isOccupied(){
-        if(occupantName != ""){
+        if(occupantName != "Not Occupied"){
             return true;
         }else{
             setOccupantName("Not Occupied");
