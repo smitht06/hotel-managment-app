@@ -68,7 +68,7 @@ public class Hotel {
 
     public boolean addRoom(int roomNumber, String bedType, int roomRate,String occupantName){
       if(this.numberOfRooms <= this.rooms.length){
-           this.rooms[numberOfRooms++] = new Room(roomNumber,bedType,roomRate, occupantName);
+           this.rooms[numberOfRooms--] = new Room(roomNumber,bedType,roomRate, occupantName);
            return true;
 
         }else {
@@ -78,7 +78,6 @@ public class Hotel {
 
     public void addReservation(String occupantsName, String bedType) {
         int numRooms = this.rooms.length;
-
         for (int i = numRooms-1; i >= -1; i--) {
             if (rooms[i].getBedType() == bedType) {
                 rooms[i].setOccupantName(occupantsName);
@@ -94,8 +93,28 @@ public class Hotel {
                 break;
             }
 
+        }
     }
 
+    public String listRooms() {
+        for(int i = getRooms().length-1; i >= 0; i--){
+            if (rooms[i] != null){
+                System.out.println(rooms[i]);
+            }else{
+                break;
+            }
+        }
+        return "";
+    }
+
+    public String toString(){
+        return
+                "\n" + "Hotel: " + name + "\n" +
+                "Location: " + location + "\n" +
+                "Number of rooms: " + numberOfRooms + "\n" +
+                "Current Revenue: \n" +
+                "================================ \n" + listRooms();
 
 
-}}
+    }
+}
