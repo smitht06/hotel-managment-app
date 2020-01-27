@@ -66,6 +66,6 @@ public class Room extends Hotel{
                 "\nRoom Number: " + roomNumber +
                 "\nBed Type: " + bedType +
                 "\nRate: " + rate +
-                "\nOccupant Name: " + occupantName;
+                "\nOccupant Name: " + occupantName + "\n";
     }
 }

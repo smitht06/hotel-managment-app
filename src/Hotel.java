@@ -3,6 +3,7 @@ public class Hotel {
     private String name;
     private String location;
     private int numberOfRooms;
+    private int revenue;
     private static final int NOT_FOUND = -1;
 
     //default constructor
@@ -11,6 +12,7 @@ public class Hotel {
         this.name = "None";
         this.location = "Earth";
         this.numberOfRooms = 9;
+        this.revenue = 0;
     }
 
     //parameterized constructor
@@ -19,6 +21,7 @@ public class Hotel {
         this.location = location;
         this.numberOfRooms = numberOfRooms;
         this.rooms = rooms;
+        this.revenue = 0;
     }
 
     //setters for all variables
@@ -97,14 +100,15 @@ public class Hotel {
     }
 
     public String listRooms() {
+        String info = "";
         for(int i = getRooms().length-1; i >= 0; i--){
             if (rooms[i] != null){
-                System.out.println(rooms[i]);
+                info += rooms[i].toString();
             }else{
                 break;
             }
         }
-        return "";
+        return info;
     }
 
     public String toString(){
