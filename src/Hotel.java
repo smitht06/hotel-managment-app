@@ -84,7 +84,11 @@ public class Hotel {
         for (int i = numRooms-1; i >= -1; i--) {
             if (rooms[i].getBedType() == bedType) {
                 rooms[i].setOccupantName(occupantsName);
+                this.revenue += rooms[i].getRate();
+                System.out.println("Reservation Complete");
                 break;
+            }else{
+                System.out.println("No room with this bed type available, reservation was not made.");
             }
         }
     }
@@ -116,7 +120,7 @@ public class Hotel {
                 "\n" + "Hotel: " + name + "\n" +
                 "Location: " + location + "\n" +
                 "Number of rooms: " + numberOfRooms + "\n" +
-                "Current Revenue: \n" +
+                "Current Revenue: " + revenue + "\n" +
                 "================================ \n" + listRooms();
 
 
