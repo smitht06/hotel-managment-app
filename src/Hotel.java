@@ -81,16 +81,16 @@ public class Hotel {
 
     public void addReservation(String occupantsName, String bedType) {
         int numRooms = this.rooms.length;
-        for (int i = numRooms-1; i >= -1; i--) {
+        for (int i = numRooms-1; i > getNumberOfRooms(); i--) {
             if (rooms[i].getBedType() == bedType) {
                 rooms[i].setOccupantName(occupantsName);
                 this.revenue += rooms[i].getRate();
                 System.out.println("Reservation Complete");
                 break;
             }else{
-                System.out.println("No room with this bed type available, reservation was not made.");
+                //System.out.println("No room with this bed type available, reservation was not made.");
             }
-        }
+        } 
     }
     public void cancelReservation(String occupantName){
         int numRooms = this.rooms.length;
