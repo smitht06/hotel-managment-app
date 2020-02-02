@@ -43,7 +43,6 @@ public class Hotel {
 
     //getters for all variables
 
-
     public Room[] getRooms() {
         return rooms;
     }
@@ -60,20 +59,29 @@ public class Hotel {
         return numberOfRooms;
     }
 
+    //is full method tells if all rooms are full
+    public boolean isFull() {
+        int numRooms = this.rooms.length;
+        int numberOfRoomsFree = getNumberOfRooms();
+        for (int i = numRooms-1; i > getNumberOfRooms(); i--){
+            if(rooms[i].isOccupied() == true) {
+                numberOfRoomsFree --;
+            }
+            if(numberOfRoomsFree == 0){
+                return true;
+            }else{
+                return false;
+            }
 
-    private boolean isFull(int numberOfRooms) {
-        if (numberOfRooms == 0) {
-            return true;
-        } else {
-            return false;
         }
+        System.out.println(numberOfRoomsFree);
+        return false;
     }
 
     public boolean addRoom(int roomNumber, String bedType, int roomRate,String occupantName){
       if(this.numberOfRooms <= this.rooms.length){
            this.rooms[numberOfRooms--] = new Room(roomNumber,bedType,roomRate, occupantName);
            return true;
-
         }else {
           return false;
       }
@@ -83,26 +91,26 @@ public class Hotel {
         int numRooms = this.rooms.length;
         boolean found=false;
         for (int i = numRooms-1; i > getNumberOfRooms(); i--) {
-            if (rooms[i].getBedType() == bedType) {
+            if (rooms[i].getBedType() == bedType && rooms[i].isOccupied() == false) {
                 rooms[i].setOccupantName(occupantsName);
                 this.revenue += rooms[i].getRate();
                 System.out.println("Reservation Complete");
                 found = true;
                 break;
             }
-        }
-        if(found == false){
+        }if(found == false){
             System.out.println("No room of this bed type is available");
         }
     }
+
     public void cancelReservation(String occupantName){
         int numRooms = this.rooms.length;
         for (int i = numRooms-1; i >= -1; i--) {
             if (rooms[i].getOccupantName() == occupantName) {
                 rooms[i].setOccupantName("Not Occupied");
+                System.out.println("Reservation cancelled");
                 break;
             }
-
         }
     }
 

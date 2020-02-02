@@ -44,18 +44,6 @@ public class Room extends Hotel{
         return occupantName;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public void setBedType(String bedType) {
-        this.bedType = bedType;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
-    }
-
     public void setOccupantName(String occupantName) {
         this.occupantName = occupantName;
     }
