@@ -11,6 +11,7 @@ public class Main {
         //System.out.println(hotel1.getNumberOfRooms());
         hotel1.addReservation("Tony", "Queen");
         hotel1.addReservation("Josiah Bartlett", "King");
+        hotel1.addReservation("Josiah Bartlett", "bunk");
         //Room room1 = hotel1.getRooms()[9];
         //for(int i = 0; i <= hotel1.getRooms().length-1; i++){
           //  System.out.println(hotel1.getRooms()[i]);
