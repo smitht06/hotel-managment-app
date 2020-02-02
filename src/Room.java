@@ -1,4 +1,12 @@
+/*
+ * File: Room.java
+ * Author: Anthony Smith
+ * Date: 2/2/2020
+ * Course: COP 5007
+ * Purpose: This class is a template for a hotel room
+ * */
 public class Room extends Hotel{
+    //initialize variables
     private int roomNumber;
     private String bedType;
     private int rate;
@@ -19,6 +27,8 @@ public class Room extends Hotel{
         this.rate = rate;
         this.occupantName = occupantName;
     }
+
+    //checks the occupant name and changes it to not occupied and sets to false
     public boolean isOccupied(){
         if(occupantName != "Not Occupied"){
             return true;
@@ -28,6 +38,7 @@ public class Room extends Hotel{
         }
     }
 
+    //getter methods
     public int getRoomNumber() {
         return roomNumber;
     }
@@ -48,6 +59,7 @@ public class Room extends Hotel{
         this.occupantName = occupantName;
     }
 
+    //toString to print room info
     @Override
     public String toString() {
         return
