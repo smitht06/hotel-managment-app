@@ -40,7 +40,7 @@ public class Main {
         hotel1.addReservation("Stanley Hudson", "Queen");
 
 
-        //test addres if bedtype is not found
+        //test address if bed type is not found
         hotel1.addReservation("Kevin Malone", "bunk beds");
 
 
