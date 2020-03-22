@@ -2,7 +2,6 @@
  * File: Room.java
  * Author: Anthony Smith
  * Date: 2/2/2020
- * Course: COP 5007
  * Purpose: This class is a template for a hotel room
  * */
 public class Room extends Hotel{
